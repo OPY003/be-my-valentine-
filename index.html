@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Will You Be My Valentine?</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="bg-animation">
+    <div class="bg-blob blob-1"></div>
+    <div class="bg-blob blob-2"></div>
+    <div class="bg-blob blob-3"></div>
+    <div class="bg-blob blob-4"></div>
+</div>
+
+<!-- Main Screen -->
+<div class="screen" id="mainScreen">
+    <div class="content-wrapper">
+        <h1 class="title">Will you be my valentine? <span class="rose">🌹</span></h1>
+        <div class="button-container">
+            <button id="yesBtn" class="btn btn-yes">Yes 💕</button>
+            <button id="noBtn" class="btn btn-no">No ✖</button>
+        </div>
+        <p class="hint">Try clicking "No"... I dare you! 😏</p>
+    </div>
+</div>
+
+<!-- Angry Screen -->
+<div class="screen hidden" id="angryScreen">
+    <div class="content-wrapper">
+        <h2 class="angry-title">Stop messing with me! 😾</h2>
+<div class="cat-container" id="catContainer"></div>
+        <p>You asked for this... 🔫</p>
+    </div>
+</div>
+
+<!-- Success Screen -->
+<div class="screen hidden" id="successScreen">
+    <div class="content-wrapper">
+        <h2 class="success-title">Yay! 💕💕💕</h2>
+        <p class="success-message">You made me the happiest person!</p>
+        <div id="heartsContainer"></div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
