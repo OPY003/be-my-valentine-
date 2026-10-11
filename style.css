@@ -142,6 +142,39 @@ html {
     pointer-events: none;
 }
 
+/* ===== Music Sound Toggle ===== */
+.music-toggle {
+    position: fixed;
+    top: 24px;
+    right: 24px;
+    z-index: 9999;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    box-shadow: var(--shadow-sm);
+    cursor: pointer;
+    font-size: 1.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s var(--transition-smooth);
+}
+
+.music-toggle:hover {
+    transform: scale(1.1);
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: var(--shadow-md);
+}
+
+.music-toggle.muted {
+    opacity: 0.6;
+    filter: grayscale(0.8);
+}
+
 /* ===== Screens ===== */
 .screen {
     position: absolute;
@@ -231,6 +264,9 @@ html {
     gap: 24px;
     flex-wrap: wrap;
     justify-content: center;
+    align-items: center;
+    min-height: 64px;
+    position: relative;
     animation: buttons-entrance 0.8s 0.2s backwards var(--transition-bounce);
 }
 
@@ -396,6 +432,15 @@ html {
     20%, 40%, 60%, 80% { transform: translateX(10px); }
 }
 
+@keyframes screen-shake {
+    0%, 100% { transform: translate(0, 0); }
+    15% { transform: translate(-8px, 6px); }
+    30% { transform: translate(8px, -6px); }
+    45% { transform: translate(-6px, -4px); }
+    60% { transform: translate(6px, 4px); }
+    75% { transform: translate(-3px, 2px); }
+}
+
 .cat-container {
     margin-top: 24px;
     max-width: 320px;
@@ -546,12 +591,11 @@ html {
     10% {
         opacity: 1;
     }
-    50% {
-        transform: translateY(-120px) translateX(var(--drift-x, 0px)) scale(1.2) rotate(180deg);
+    80% {
         opacity: 0.9;
     }
     100% {
-        transform: translateY(-250px) translateX(var(--drift-x, 0px)) scale(1.5) rotate(360deg);
+        transform: translateY(-110vh) translateX(var(--drift-x, 0px)) scale(1.5) rotate(360deg);
         opacity: 0;
     }
 }
@@ -563,6 +607,8 @@ html {
     width: 10px;
     height: 16px;
     border-radius: 2px;
+    pointer-events: none;
+    z-index: 999;
     background: linear-gradient(135deg, 
         hsl(calc(360 * var(--i, 0.5)), 85%, 60%) 0%, 
         hsl(calc(360 * var(--i, 0.5) + 30), 85%, 70%) 100%);

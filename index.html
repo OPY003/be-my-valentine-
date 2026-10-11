@@ -3,11 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="An interactive Valentine's Day experience with playful animations and celebrations!">
 <title>Will You Be My Valentine?</title>
 <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+
+<!-- Sound Toggle -->
+<button id="musicToggle" class="music-toggle" aria-label="Toggle sound" title="Toggle sound">🎵</button>
 
 <div class="bg-animation">
     <div class="bg-blob blob-1"></div>
@@ -21,8 +25,8 @@
     <div class="content-wrapper">
         <h1 class="title">Will you be my valentine? <span class="rose">🌹</span></h1>
         <div class="button-container">
-            <button id="yesBtn" class="btn btn-yes">Yes 💕</button>
-            <button id="noBtn" class="btn btn-no">No ✖</button>
+            <button id="yesBtn" class="btn btn-yes">Yes <span class="btn-hearts">💕</span></button>
+            <button id="noBtn" class="btn btn-no">No <span class="btn-x">✖</span></button>
         </div>
         <p class="hint">Try clicking "No"... I dare you! 😏</p>
     </div>
@@ -32,14 +36,15 @@
 <div class="screen hidden" id="angryScreen">
     <div class="content-wrapper">
         <h2 class="angry-title">Stop messing with me! 😾</h2>
-<div class="cat-container" id="catContainer"></div>
-        <p>You asked for this... 🔫</p>
+        <div class="cat-container" id="catContainer"></div>
+        <p class="angry-subtitle">You asked for this... 🔫</p>
     </div>
 </div>
 
 <!-- Success Screen -->
 <div class="screen hidden" id="successScreen">
     <div class="content-wrapper">
+        <div class="celebration-emoji">🥰🎉</div>
         <h2 class="success-title">Yay! 💕💕💕</h2>
         <p class="success-message">You made me the happiest person!</p>
         <div id="heartsContainer"></div>
